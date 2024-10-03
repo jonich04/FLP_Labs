@@ -17,8 +17,6 @@ data1 = [
 data2 = [
     {"Название": "Носки", "Измерение": "пары"}
 ]
-
-# Создаем потоки для записи данных в JSON
 t1 = threading.Thread(target=write_to_json, args=(lock, 'price_list.json', data1))
 t2 = threading.Thread(target=write_to_json, args=(lock, 'price_list.json', data2))
 t1.start()

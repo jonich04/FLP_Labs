@@ -22,11 +22,7 @@ def save_directory_structure(lock, root_dir, output_file):
         lock.release()
 
 lock = threading.Lock()
-
-# Пусть это будет корневая папка, например, ваша "Документы" папка
 root_directory = 'D:\5 семестр\питон\price_list.json'
-
-# Создаем поток для сохранения структуры папки
 t1 = threading.Thread(target=save_directory_structure, args=(lock, root_directory, 'directory_structure.json'))
 t1.start()
 t1.join()
